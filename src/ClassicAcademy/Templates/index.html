@@ -29,6 +29,8 @@
 
       li{
         color: black;
+        list-style: none;
+        padding-left: 20px;
       }
 
       #MainBox{
@@ -69,6 +71,9 @@
             border-radius: 20px;
             padding: 10px;
             text-align: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         #miniLeftImageBox1{
@@ -89,6 +94,9 @@
             padding: 10px;
             text-align: left;
             margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center
         }
 
         #miniRightImageBox1{
@@ -147,7 +155,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body" style="margin: 0 auto; text-align: center;">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" style="background-color: white;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" id="navLiATag" href="#">Home</a>
                 </li>
@@ -192,7 +200,7 @@
                                 <h2 class="text-right">25K+ Students</h2>
                             </div>
                             <div class="col-md-6">
-                                <h2 class="text-left">Trust Us</h2>
+                                <h2 class="text-right">Trust Us</h2>
                             </div>
                         </div>
                     </div>
@@ -217,139 +225,240 @@
       <iframe width="420px" height="315px" src="https://www.youtube.com/embed/lU11WemD9dE?si=5qAAD6kKcdYX58qm" frameborder="0" allowfullscreen style="border-radius: 20px;"></iframe>
     </main>
     <br><br>
+
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="margin: 0 auto; width: 50%; margin-top: 20px; margin-bottom: 20px;">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'images/one.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/two.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/three.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/threee.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/four.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/five.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/six.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/seven.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/eight.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/nine.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/ten.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/eleven.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/tveleve.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/therteen.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/fourteen.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/fifteen.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/sixteen.jpeg' %}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <br><br>
     <h2 style="text-align: center; font-weight: bolder; margin-top: 20px;">Explore Our Diverse Academic Programs</h2>
     <div id="MainBox">
       <div id="leftBox1">
           <div id="miniLeftTextBox1">
-            {% if coaching_classes %}
+            <div>
+              {% if coaching_classes %}
               <h2>Coaching classes for</h2>
+              <hr>
               {% for coaching_class in coaching_classes %}
               <li id="courseTitile">{{ coaching_class.name }}</li>
               {% endfor %}
             {% endif %}
+            </div>
           </div>
           <img id="miniLeftImageBox1" src="{% static 'images/coachingClasses.jpg' %}" alt="Coaching classes image">
       </div>
       <div id="rightBox1">
           <div id="miniRightTextBox1">
-            {% if coaching_subjects %}
-            <h2>Coaching subjects</h2>
-              {% for coaching_subject in coaching_subjects %}
-                <li id="courseTitile">{{ coaching_subject.name }}</li>
-              {% endfor %}
-            {% endif %}
+            <div>
+              {% if coaching_subjects %}
+              <h2>Coaching subjects</h2>
+              <hr>
+                {% for coaching_subject in coaching_subjects %}
+                  <li id="courseTitile">{{ coaching_subject.name }}</li>
+                {% endfor %}
+              {% endif %}
+            </div>
           </div>
           <img id="miniRightImageBox1" src="{% static 'images/coaching_subjects.jpg' %}" alt="Coaching subjects image">
       </div>
       <div id="leftBox1">
         <div id="miniLeftTextBox1">
-          {% if english_courses %}
-            <h2>English Courses</h2>
-            {% for english_course in english_courses %}
-            <li id="courseTitile">{{ english_course.topic }}</li>
-            {% endfor %}
-          {% endif %}
+          <div>
+            {% if english_courses %}
+              <h2>English Courses</h2>
+              <hr>
+              {% for english_course in english_courses %}
+                <li id="courseTitile">{{ english_course.topic }}</li>
+              {% endfor %}
+            {% endif %}
+          </div>
         </div>
         <img id="miniLeftImageBox1" src="{% static 'images/english_courses.jpg' %}" alt="Education programs image">
       </div>
       <div id="rightBox1">
           <div id="miniRightTextBox1">
-            {% if education_programs %}
-            <h2>Education Programs</h2>
-              {% for education_program in education_programs %}
-                <li id="courseTitile">{{ education_program.name }}</li>
-              {% endfor %}
-            {% endif %}
+            <div>
+              {% if education_programs %}
+              <h2>Education Programs</h2>
+              <hr>
+                {% for education_program in education_programs %}
+                  <li id="courseTitile">{{ education_program.name }}</li>
+                {% endfor %}
+              {% endif %}
+            </div>
           </div>
           <img id="miniRightImageBox1" src="{% static 'images/education_programs.jpg' %}" alt="Education programs image">
       </div>
       <div id="leftBox1">
         <div id="miniLeftTextBox1">
-          {% if ms_two_year_programs %}
+          <div>
+            {% if ms_two_year_programs %}
             <h2>MS Two Year Programs</h2>
+            <hr>
             {% for ms_two_year_program in ms_two_year_programs %}
               <li id="courseTitile">Name: {{ ms_two_year_program.name }}</li>
               <li id="courseTitile">Duration: {{ ms_two_year_program.duration }}</li>
-              <hr>
             {% endfor %}
           {% endif %}
+          </div>
         </div>
         <img id="miniLeftImageBox1" src="{% static 'images/ms_two_year_programs.jpg' %}" alt="MS two year programs image">
       </div>
       <div id="rightBox1">
           <div id="miniRightTextBox1">
-            {% if mba %}
-            <h2>MBA</h2>
-              {% for mb in mba %}
-                <li id="courseTitile">{{ mb.name }}</li>
-              {% endfor %}
-            {% endif %}
+            <div>
+              {% if mba %}
+              <h2>MBA</h2>
+              <hr>
+                {% for mb in mba %}
+                  <li id="courseTitile">{{ mb.name }}</li>
+                {% endfor %}
+              {% endif %}
+            </div>
           </div>
           <img id="miniRightImageBox1" src="{% static 'images/mba.jpg' %}" alt="MBA programs image">
       </div>
       <div id="leftBox1">
         <div id="miniLeftTextBox1">
-          {% if bs_four_year_programs %}
+          <div>
+            {% if bs_four_year_programs %}
             <h2>BS Four Year Programs</h2>
+            <hr>
             {% for bs_four_year_program in bs_four_year_programs %}
             <li id="courseTitile">{{ bs_four_year_program.name }}</li>
             {% endfor %}
           {% endif %}
+          </div>
         </div>
         <img id="miniLeftImageBox1" src="{% static 'images/bs_four_year_programs.jpg' %}" alt="BS four year programs image">
       </div>
       <div id="rightBox1">
           <div id="miniRightTextBox1">
-            {% if two_year_associate_degree_programs %}
-            <h2>Two Year Associate Degree Programs</h2>
-              {% for two_year_associate_degree_program in two_year_associate_degree_programs %}
-                <li id="courseTitile">{{ two_year_associate_degree_program.name }}</li>
-              {% endfor %}
-            {% endif %}
+            <div>
+              {% if two_year_associate_degree_programs %}
+              <h2>Two Year Associate Degree Programs</h2>
+              <hr>
+                {% for two_year_associate_degree_program in two_year_associate_degree_programs %}
+                  <li id="courseTitile">{{ two_year_associate_degree_program.name }}</li>
+                {% endfor %}
+              {% endif %}
+            </div>
           </div>
           <img id="miniRightImageBox1" src="{% static 'images/two_year_associate_degree_programs.jpg' %}" alt="Two year associate degree programs image">
       </div>
       <div id="leftBox1">
         <div id="miniLeftTextBox1">
-          {% if diploma_programs %}
+          <div>
+            {% if diploma_programs %}
             <h2>Diploma Programs</h2>
+            <hr>
             {% for diploma_program in diploma_programs %}
             <li id="courseTitile">{{ diploma_program.name }}</li>
             {% endfor %}
           {% endif %}
+          </div>
         </div>
         <img id="miniLeftImageBox1" src="{% static 'images/diploma_programs.jpg' %}" alt="Diploma programs image">
       </div>
       <div id="rightBox1">
         <div id="miniRightTextBox1" class="specialization_certificate_six_months_courses_programs_Container_Div">
-          {% if specialization_certificate_six_months_courses_programs %}
-          <h2>Specialization Certificate Six Months Courses Programs</h2>
-            {% for specialization_certificate_six_months_courses_program in specialization_certificate_six_months_courses_programs %}
-              <li id="courseTitile">{{ specialization_certificate_six_months_courses_program.name }}</li>
-            {% endfor %}
-          {% endif %}
+          <div>
+            {% if specialization_certificate_six_months_courses_programs %}
+            <h2>Specialization Certificate Six Months Courses Programs</h2>
+            <hr>
+              {% for specialization_certificate_six_months_courses_program in specialization_certificate_six_months_courses_programs %}
+                <li id="courseTitile">{{ specialization_certificate_six_months_courses_program.name }}</li>
+              {% endfor %}
+            {% endif %}
+          </div>
         </div>
         <img id="miniRightImageBox1" src="{% static 'images/specialization_certificate_six_months_courses_programs.jpg' %}" alt="Specialization certificate six months courses programs image">
       </div>
       <div id="leftBox1">
         <div id="miniLeftTextBox1">
-        {% if courses %}
-        <h2>Courses</h2>
-          {% for course in courses %}
-            <li id="courseTitile">{{ course.name }}</li>
-          {% endfor %}
-        {% endif %}
+          <div>
+            {% if courses %}
+            <h2>Courses</h2>
+            <hr>
+              {% for course in courses %}
+                <li id="courseTitile">{{ course.name }}</li>
+              {% endfor %}
+            {% endif %}
+          </div>
       </div>
       <img id="miniLeftImageBox1" src="{% static 'images/courses.jpg' %}" alt="Eg coaching subjects image">
       </div>
       <div id="rightBox1">
         <div id="miniRightTextBox1">
-          {% if facilities %}
+          <div>
+            {% if facilities %}
             <h2>Facilities</h2>
+            <hr>
             {% for facilitie in facilities %}
             <li id="courseTitile">{{ facilitie.name }}</li>
             {% endfor %}
           {% endif %}
+          </div>
         </div>
         <img id="miniRightImageBox1" src="{% static 'images/facilities.jpg' %}" alt="Facilities image">
       </div>
@@ -360,9 +469,10 @@
         <div class="container" id="footer">
             <p>&copy; Classic Academy Of Computer Science Larkana</p>
             <ul class="list-inline">
-                <li class="list-inline-item"><a href="#" class="text-light">Facebook</a></li>
-                <li class="list-inline-item"><a href="#" class="text-light">WhatsApp</a></li>
-                <li class="list-inline-item"><a href="#" class="text-light">LinkedIn</a></li>
+                <li class="list-inline-item"><a href="https://web.facebook.com/classicacademylarkana/?_rdc=1&_rdr" target="_blank" class="text-light">Facebook</a></li>
+                <li class="list-inline-item"><a href="#" class="text-light" target="_blank">WhatsApp</a></li>
+                <li class="list-inline-item"><a href="#" class="text-light" target="_blank">LinkedIn</a></li>
+                <li class="list-inline-item"><a href="#" class="text-light" target="_blank">Youtube</a></li>
             </ul>
         </div>
     </footer>
