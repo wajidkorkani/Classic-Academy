@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="shortcut icon" href="{% static 'images/logo.jpeg' %}" type="image/x-icon">
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        #contaner{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            text-align: center;
+        }
+        div{
+            color: green;
+            font-size: 40px;
+            font-weight: bolder;
+            text-align: center;
+        }
+        img{
+            width: 50px;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 0 auto;
+            color: darkgreen;
+        }
+        #navLink{
+            margin-top: 20px;
+        }
+
+        a{
+            color: darkgreen;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="{% url 'home' %}">
+            <img src="{% static 'images/logo.jpeg' %}" alt="logo">
+            Classic Academy
+        </a>
+        <a id="navLink" href="{% url 'home' %}">Home</a>
+    </nav>
+      <br>
+    <div id="container"><div>
+        404 Page not found!
+    </div></div>
+</body>
+</html>
