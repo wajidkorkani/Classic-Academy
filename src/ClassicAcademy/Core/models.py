@@ -79,3 +79,10 @@ class Specialization_Certificate_Six_Months_Courses_Programs(models.Model):
 
     def __str__(self):
         return self.name
+
+class Virtual_University_Courses_And_Programs(models.Model):
+    name = models.CharField(max_length=250)
+    duration = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.name
