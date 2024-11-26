@@ -12,7 +12,9 @@ from .models import (
     Two_Year_Associate_Degree_Programs, 
     Diploma_Programs, 
     Specialization_Certificate_Six_Months_Courses_Programs,
-    Virtual_University_Courses_And_Programs
+    Virtual_University_Courses_And_Programs,
+    News_Feeds,
+    Classic_Video
 )
 
 # Register each model with the admin panel
@@ -29,4 +31,5 @@ admin.site.register(Two_Year_Associate_Degree_Programs)
 admin.site.register(Diploma_Programs)
 admin.site.register(Specialization_Certificate_Six_Months_Courses_Programs)
 admin.site.register(Virtual_University_Courses_And_Programs)
-
+admin.site.register(Classic_Video)
+admin.site.register(News_Feeds)

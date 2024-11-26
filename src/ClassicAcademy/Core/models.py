@@ -94,4 +94,11 @@ class News_Feeds(models.Model):
     video = models.CharField(max_length=5000)
 
     def __str__(self):
-        return self.name
+        return self.title
+
+
+class Classic_Video(models.Model):
+    link = models.CharField(max_length=3000)
+
+    def __str__(self):
+        return "Video of Classic Academy for About Section."
