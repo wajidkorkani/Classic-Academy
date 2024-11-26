@@ -86,3 +86,12 @@ class Virtual_University_Courses_And_Programs(models.Model):
 
     def __str__(self):
         return self.name
+
+class News_Feeds(models.Model):
+    title = models.CharField(max_length=300)
+    description = models.TextField()
+    image = models.CharField(max_length=3000)
+    video = models.CharField(max_length=5000)
+
+    def __str__(self):
+        return self.name
